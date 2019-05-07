@@ -43,5 +43,27 @@
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.3.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,json,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{scss,sass}": "sass-lint"
+  },
+  "prettier": {
+    "printWidth": 88,
+    "semi": false,
+    "arrowParens": "always"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:prettier/recommended"
+    ]
   }
 }
