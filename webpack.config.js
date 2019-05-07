@@ -38,6 +38,11 @@ const config = {
       template: path.join(__dirname, "src/index.pug"),
       inject: true
     }),
+    new HTMLWebpackPlugin({
+      filename: "admin.html",
+      template: path.join(__dirname, "src/admin.pug"),
+      inject: true
+    }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.optimize\.css$/g,
       cssProcessor: require("clean-css"),
