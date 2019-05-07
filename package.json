@@ -1,0 +1,11 @@
+{
+  "name": "html-csv-export",
+  "version": "1.0.0",
+  "author": "Tobias Kuppens Groot",
+  "description": "persist html form data and export it to csv",
+  "license": "GPL-3.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
