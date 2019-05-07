@@ -4,6 +4,7 @@ const webpack = require("webpack")
 const CleanWebpackPlugin = require("clean-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const HTMLWebpackPlugin = require("html-webpack-plugin")
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 
 const config = {
   entry: {
@@ -24,6 +25,14 @@ const config = {
     new HTMLWebpackPlugin({
       template: path.join(__dirname, "src/index.pug"),
       inject: true
+    }),
+    new OptimizeCssAssetsPlugin({
+      assetNameRegExp: /\.optimize\.css$/g,
+      cssProcessor: require("clean-css"),
+      cssProcessorPluginOptions: {
+        preset: ["default", { discardComments: { removeAll: true } }]
+      },
+      canPrint: true
     })
   ],
   module: {
@@ -40,7 +49,9 @@ const config = {
           { loader: "css-loader", options: { sourceMap: true } },
           {
             loader: "postcss-loader",
-            options: { plugins: [require("autoprefixer")({})] }
+            options: {
+              plugins: [require("autoprefixer")({}), require("postcss-normalize")({})]
+            }
           },
           { loader: "sass-loader", options: { sourceMap: true } }
         ]
