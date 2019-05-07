@@ -34,6 +34,7 @@ const config = {
       chunkFilename: "[id].css"
     }),
     new HTMLWebpackPlugin({
+      title: "Sign-up Form",
       template: path.join(__dirname, "src/index.pug"),
       inject: true
     }),
