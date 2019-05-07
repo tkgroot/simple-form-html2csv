@@ -1,0 +1,10 @@
+//- Creates input fields and labels for every column passed into the mixin
+//-
+//- columns: {Array} - [{id, label, size, placeholder, invalidFeedback}]
+mixin row-form(columns)
+  .row
+    each column in columns
+      div(class="mb-3 col-md-"+column.size)
+        label(for=column.id) #{column.label}
+        input(type="text" id=column.id placeholder=column.placeholder value="" required="").form-control
+        .invalid-feedback #{column.invalidFeedback}
