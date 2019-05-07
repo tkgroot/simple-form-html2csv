@@ -3,7 +3,7 @@ extends _base.pug
 block content
   include mixins/rowForm.pug
 
-  form(novalidate="").container.form-w-720
+  form(id="submitForm" novalidate="").container.form-w-720
     +row-form([
       {id: "firstname", label: "First name", size: 6, placeholder: "First name", invalidFeedback: "invalid username"},
       {id: "lastname", label: "Last name", size: 6, placeholder: "Last name", invalidFeedback: "invalid lastname"}
