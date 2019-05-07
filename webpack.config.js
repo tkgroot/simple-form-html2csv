@@ -1,6 +1,7 @@
 const path = require("path")
 
 const webpack = require("webpack")
+const CopyWebpackPlugin = require("copy-webpack-plugin")
 const CleanWebpackPlugin = require("clean-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const HTMLWebpackPlugin = require("html-webpack-plugin")
@@ -17,6 +18,12 @@ const config = {
   plugins: [
     new webpack.ProgressPlugin(),
     new webpack.WatchIgnorePlugin([path.join(__dirname, ".env")]),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, "src/db.json"),
+        to: path.resolve(__dirname, "build")
+      }
+    ]),
     new CleanWebpackPlugin({}),
     new MiniCssExtractPlugin({
       filename: "[name].css",
