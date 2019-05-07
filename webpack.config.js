@@ -18,6 +18,10 @@ const config = {
   plugins: [
     new webpack.ProgressPlugin(),
     new webpack.WatchIgnorePlugin([path.join(__dirname, ".env")]),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    }),
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, "src/db.json"),
