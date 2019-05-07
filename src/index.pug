@@ -1,0 +1,32 @@
+extends _base.pug
+
+block content
+  include mixins/rowForm.pug
+
+  form(novalidate="").container.form-w-720
+    +row-form([
+      {id: "firstname", label: "First name", size: 6, placeholder: "First name", invalidFeedback: "invalid username"},
+      {id: "lastname", label: "Last name", size: 6, placeholder: "Last name", invalidFeedback: "invalid lastname"}
+      ])
+    .mb-3
+      label(for="location") Location
+      .input-group
+        .input-group-prepend
+          span.input-group-text @
+        input(type="text" id="location" placeholder="Location" required="").form-control
+        div(style="width: 100%;").invalid-feedback
+          Your username is required.
+    +row-form([
+      {id: "department", label: "Department", size: 8, placeholder: "Department", invalidFeedback: "invalid"},
+      {id: "short", label: "Kürzel", size: 4, placeholder: "KRZ", invalidFeedback: "invalid"}
+      ])
+    .mb-3
+      label(for="attendance") Attendance
+      select(id="attendance" required="").custom-select.d-block.w-100
+        option(value="") Choose...
+        option(value="true") Attending
+        option(value="false") Not Attending
+      .invalid-feedback
+        Please select a valid country.
+    hr.mb-4
+    button(type="submit").btn.btn-lg.btn-primary.btn-block.col-6.mx-auto Sign in
