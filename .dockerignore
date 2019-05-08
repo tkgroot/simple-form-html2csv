@@ -1,0 +1,19 @@
+#
+
+.env
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Git
+.git/
+.gitignore
+
+# Config and other files
+.editorconfig
+.nvmrc
+
+# Markdownfiles
+*.md
