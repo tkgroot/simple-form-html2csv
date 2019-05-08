@@ -12,7 +12,7 @@ const config = {
     app: path.resolve(__dirname, "src/index.js")
   },
   output: {
-    path: path.resolve(__dirname, "build/"),
+    path: path.resolve(__dirname, "build"),
     filename: "[name].[hash].js"
   },
   plugins: [
@@ -24,8 +24,14 @@ const config = {
     }),
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, "src/db.json"),
-        to: path.resolve(__dirname, "build")
+        from: path.resolve(__dirname, "src/*.php"),
+        to: path.resolve(__dirname, "build"),
+        flatten: true
+      },
+      {
+        from: path.resolve(__dirname, "src/signups.csv"),
+        to: path.resolve(__dirname, "build"),
+        flatten: true
       }
     ]),
     new CleanWebpackPlugin({}),
