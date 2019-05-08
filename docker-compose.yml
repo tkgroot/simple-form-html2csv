@@ -3,7 +3,9 @@ version: "3"
 
 services:
   dev:
-    image: signup:latest
+    build:
+      context: "."
+      dockerfile: "Dockerfile"
     volumes:
       - "./build:/www/"
     expose:
