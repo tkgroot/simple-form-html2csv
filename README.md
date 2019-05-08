@@ -1,4 +1,4 @@
-# html-csv
+# simple-form-html2csv
 
 Add a simple input form, styled with bootstrap, submits the form content to the
 server´s php file, which stores the submitted formdata in a csv file.

@@ -1,8 +1,8 @@
 {
-  "name": "html-csv-export",
+  "name": "simple-form-html2csv",
   "version": "1.0.0",
   "author": "Tobias Kuppens Groot",
-  "description": "persist html form data and export it to csv",
+  "description": "Bootstrap signup form, store data on server as csv",
   "license": "GPL-3.0",
   "main": "index.js",
   "scripts": {
