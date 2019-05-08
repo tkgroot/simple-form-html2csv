@@ -18,7 +18,10 @@ form.submit((e) => {
   // submit formData to the form.php
   // if successful reset form
   $.post("form.php", form.serialize(), (data) => {
-    console.log(data)
+    if (data === "Done") {
+      form.addClass("d-none")
+      $("#alert").removeClass("d-none")
+    }
     form[0].reset()
   })
 })
