@@ -2,6 +2,7 @@ extends _base.pug
 
 block content
   include mixins/rowForm.pug
+  div(id="alert" role="alert").container.alert.alert-success.d-none success
 
   form(id="submitForm" novalidate="").container.form-w-720
     +row-form([
