@@ -20,7 +20,8 @@ function stringify() {
     foreach ($args as $item => $value) {
         $string_list .=$value.",";
     }
-    return $string_list;
+
+    return substr($string_list, 0, -1);
 }
 
 function validate($data) {
