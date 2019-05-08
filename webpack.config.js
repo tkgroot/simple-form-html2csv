@@ -6,6 +6,8 @@ const CleanWebpackPlugin = require("clean-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const HTMLWebpackPlugin = require("html-webpack-plugin")
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin")
+const SubresourceIntegrityWebpackPlugin = require("webpack-subresource-integrity")
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin")
 
 const config = {
   entry: {
@@ -56,6 +58,17 @@ const config = {
         preset: ["default", { discardComments: { removeAll: true } }]
       },
       canPrint: true
+    }),
+    new SubresourceIntegrityWebpackPlugin({
+      hashFuncNames: ["sha256", "sha384"],
+      enabled: true
+    }),
+    new FaviconsWebpackPlugin({
+      logo: path.join(__dirname, "src/assets/logo.jpg"),
+      prefix: "icons-[hash]/",
+      statsFilename: "iconstats-[hash].json",
+      inject: true,
+      title: "Signup Form"
     })
   ],
   module: {
