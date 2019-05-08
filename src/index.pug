@@ -13,7 +13,7 @@ block content
       .input-group
         .input-group-prepend
           span.input-group-text @
-        input(type="text" id="location" placeholder="Location" required="").form-control
+        input(type="text" id="location" name="location" placeholder="Location" required="").form-control
         div(style="width: 100%;").invalid-feedback Your username is required.
     +row-form([
       {id: "department", label: "Department", size: 8, placeholder: "Department", invalidFeedback: "invalid"},
@@ -21,7 +21,7 @@ block content
       ])
     .mb-3
       label(for="attendance") Attendance
-      select(id="attendance" required="").custom-select.d-block.w-100
+      select(id="attendance" name="attendance" required="").custom-select.d-block.w-100
         option(value="") Choose...
         option(value="true") Attending
         option(value="false") Not Attending

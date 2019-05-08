@@ -6,5 +6,5 @@ mixin row-form(columns)
     each column in columns
       div(class="mb-3 col-md-"+column.size)
         label(for=column.id) #{column.label}
-        input(type="text" id=column.id placeholder=column.placeholder value="" required="").form-control
+        input(type="text" id=column.id name=column.id placeholder=column.placeholder value="" required="").form-control
         .invalid-feedback #{column.invalidFeedback}
