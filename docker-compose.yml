@@ -1,0 +1,12 @@
+---
+version: "3"
+
+services:
+  dev:
+    image: signup:latest
+    volumes:
+      - "./build:/www/"
+    expose:
+      - 80
+    ports:
+      - 8080:80
