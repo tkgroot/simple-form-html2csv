@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.1.0
+
+### Features
+
+- expand tests with chrome headless. Enter invalid fields to check if the form
+  is submitted or not
+- add additional test for the second select field option
+
+### Fixes
+
+- Formfield validation for select field
+  The select field has a default value which is not part of the submit process
+  and has to be selected by the user in order to correctly validate the form.
+
 ## v1.0.0
 
 - create project skeleton
