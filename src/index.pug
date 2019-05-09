@@ -23,7 +23,7 @@ block content
     .mb-3
       label(for="attendance") Attendance
       select(id="attendance" name="attendance" required="").custom-select.d-block.w-100
-        option(value="") Choose...
+        option(value="" selected disabled hidden) Choose...
         option(value="true") Attending
         option(value="false") Not Attending
       .invalid-feedback Use a valid selection
