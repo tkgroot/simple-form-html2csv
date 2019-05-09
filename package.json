@@ -13,6 +13,13 @@
     "test:firefox": "exit 0",
     "test": "npm run test:firefox && npm run test:chromeHeadless"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tkgroot/simple-form-html2csv"
+  },
+  "bugs": {
+    "url": "https://github.com/tkgroot/simple-form-html2csv/issues"
+  },
   "dependencies": {
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
