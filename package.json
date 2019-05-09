@@ -9,7 +9,9 @@
     "build:watch": "nodemon -w src --ext js,pug,php --exec npm run build",
     "build": "webpack -p",
     "serve": "webpack-dev-server",
-    "test": "selenium-side-runner tests/signup.side"
+    "test:chromeHeadless": "selenium-side-runner -c \"browserName=chrome chromeOptions.args=[disable-infobars, headless]\" tests/signup.side",
+    "test:firefox": "exit 0",
+    "test": "npm run test:firefox && npm run test:chromeHeadless"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
